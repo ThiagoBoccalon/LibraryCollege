@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryCollege.Views.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="True"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.TabBarIsVisible="False"
+             Shell.PresentationMode="ModalAnimated"
+             Title="{Binding Title}">
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Frame>
+                <Label Text="Welcome to Library Morley College Chelsea" HorizontalTextAlignment="Center"/>
+            </Frame>
+            
+            <Entry Text="{Binding UserName}"
+                   Placeholder="Username"/>
+            
+            <Entry Text="{Binding Password}"
+                   Placeholder="Password"
+                   IsPassword="True"/>
+
+            <Button Text="Login"
+                    HorizontalOptions="Center"
+                    Command="{Binding ExecuteLogin}" />
+        </StackLayout>
+    </ContentPage.Content>
+    
+
+</ContentPage>
