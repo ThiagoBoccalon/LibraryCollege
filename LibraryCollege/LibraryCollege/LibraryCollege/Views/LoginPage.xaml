@@ -34,12 +34,37 @@
                     CornerRadius="100" BackgroundColor="GhostWhite"
                     HeightRequest="60" WidthRequest="250"
                     Text="Login" TextColor="Black" FontFamily="Arial"
-                    Command="{Binding ExecuteLogin}" />
-         
-            <Label HorizontalOptions="Center" FontSize="Body" Text="I forget my username or password" />
-            <Label HorizontalOptions="Center" FontSize="Body" Text="Register now" />
+                    Command="{Binding ExecuteLogin}" />         
             
-            
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="I forget my username or password"
+                              TextColor="White"
+                              FontAttributes="Bold"
+                              TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ExecuteRegister}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Register now"
+                              TextColor="White"
+                              FontAttributes="Bold"
+                              TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ExecuteRegister}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
         </StackLayout>
     </ContentPage.Content>
     

@@ -30,6 +30,7 @@ namespace LibraryCollege
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
             containerRegistry.RegisterForNavigation<MainMasterPage, MainMasterPageViewModel>();
             containerRegistry.RegisterForNavigation<MainDetailPage, MainDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
         }
     }
 }

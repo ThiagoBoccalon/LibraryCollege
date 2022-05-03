@@ -18,6 +18,10 @@ namespace LibraryCollege.ViewModels
         private readonly string usernameToValidation = "Thiago";
         private readonly string passwordToValidation = "123";
 
+        private readonly string goToMainPage = "/MainMasterPage/NavigationPage/MainDetailPage";
+        private readonly string goToRegisterPage = "RegisterPage";
+
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly INavigationService _navigationService;
@@ -44,12 +48,14 @@ namespace LibraryCollege.ViewModels
             }
         }
         public ICommand ExecuteLogin { get; set; }
+        public ICommand ExecuteRegister { get; set; }
         public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {    
            _navigationService = navigationService;
            Title = "Login";           
-           ExecuteLogin = new Command(() => Login());                      
+           ExecuteLogin = new Command(() => Login());
+           ExecuteRegister = new Command(() => Register());
         }
         
         private void Login()
@@ -58,14 +64,18 @@ namespace LibraryCollege.ViewModels
                 App.Current.MainPage.DisplayAlert("Empty values", "Plese enter Username and Password", "OK");
 
             if(usernameToValidation.Equals(UserName) && passwordToValidation.Equals(Password))
-            {
-                //Application.Current.MainPage = new MainPage(); 
-                _navigationService.NavigateAsync("/MainMasterPage/NavigationPage/MainDetailPage");
+            {                 
+                _navigationService.NavigateAsync(goToMainPage);
             }
             else
             {
                 App.Current.MainPage.DisplayAlert("Empty values", "Plese enter Username and Password valid", "OK");
             }
+        }
+
+        private void Register()
+        {
+            _navigationService.NavigateAsync(goToRegisterPage, useModalNavigation: true);
         }
     }
 }

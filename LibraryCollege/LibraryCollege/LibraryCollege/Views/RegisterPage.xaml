@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="LibraryCollege.Views.RegisterPage">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+                         Padding="40,5" Spacing="5">
+                <Frame BackgroundColor="Transparent">
+                    <Image Source="logomorleycollege_white.png" HeightRequest="200" WidthRequest="200"/>
+                </Frame>
+
+                <Entry Placeholder="First Name" />
+                <Entry Placeholder="Last Name" />
+                <Entry Placeholder="Email" Keyboard="Email"/>
+                <Entry Placeholder="Number Student" Keyboard="Numeric"/>
+                <Entry Placeholder="Password" IsPassword="True"/>
+                <Entry Placeholder="Password Again" IsPassword="True"/>
+                <Button Margin="0,60" CornerRadius="100" Text="Sing Up" 
+                        Command="{Binding ExecuteSingUp}"
+                        BackgroundColor="MediumSpringGreen"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>  
+</ContentPage>
