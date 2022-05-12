@@ -21,7 +21,7 @@ namespace LibraryCollege.ViewModels
         }
 
         private void SingUp()
-        {
+        {            
             if(IsValidationData())
                 _navigationService.GoBackAsync(useModalNavigation: true);                
         }

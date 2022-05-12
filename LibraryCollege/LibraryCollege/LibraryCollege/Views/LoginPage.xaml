@@ -34,7 +34,7 @@
                     CornerRadius="100" BackgroundColor="GhostWhite"
                     HeightRequest="60" WidthRequest="250"
                     Text="Login" TextColor="Black" FontFamily="Arial"
-                    Command="{Binding ExecuteLogin}" />         
+                    Command="{Binding ExecuteNavigationToLogin}" />         
             
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
@@ -44,7 +44,7 @@
                               FontAttributes="Bold"
                               TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ExecuteRegister}"/>
+                                <TapGestureRecognizer Command="{Binding }"/>
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>
@@ -58,7 +58,7 @@
                               FontAttributes="Bold"
                               TextDecorations="Underline">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding ExecuteRegister}"/>
+                                <TapGestureRecognizer Command="{Binding ExecuteNavigationToRegister}"/>
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>

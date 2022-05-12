@@ -47,33 +47,35 @@ namespace LibraryCollege.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs("Password"));
             }
         }
-        public ICommand ExecuteLogin { get; set; }
-        public ICommand ExecuteRegister { get; set; }
+        public ICommand ExecuteNavigationToLogin { get; set; }
+        public ICommand ExecuteNavigationToRegister { get; set; }
         public LoginPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {    
-           _navigationService = navigationService;
-           Title = "Login";           
-           ExecuteLogin = new Command(() => Login());
-           ExecuteRegister = new Command(() => Register());
+            _navigationService = navigationService;
+            Title = "Login";
+            ExecuteNavigationToLogin = new Command(() => ExecuteLogin());
+            ExecuteNavigationToRegister = new Command(() => ExecuteRegister());
         }
         
-        private void Login()
+        private void ExecuteLogin()
         {
+            
             if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
                 App.Current.MainPage.DisplayAlert("Empty values", "Plese enter Username and Password", "OK");
+            
 
             if(usernameToValidation.Equals(UserName) && passwordToValidation.Equals(Password))
             {                 
                 _navigationService.NavigateAsync(goToMainPage);
             }
             else
-            {
+            {                
                 App.Current.MainPage.DisplayAlert("Empty values", "Plese enter Username and Password valid", "OK");
             }
         }
 
-        private void Register()
+        private void ExecuteRegister()
         {
             _navigationService.NavigateAsync(goToRegisterPage, useModalNavigation: true);
         }
