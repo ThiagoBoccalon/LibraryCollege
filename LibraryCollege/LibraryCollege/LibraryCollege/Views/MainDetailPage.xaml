@@ -4,5 +4,73 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LibraryCollege.Views.MainDetailPage">
+    <ScrollView Padding="0">
+        <StackLayout Spacing="10" Padding="0,10" 
+                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"                     
+                     >
+            <Frame Padding="30" 
+                   VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                   HeightRequest="50" WidthRequest="50" CornerRadius="100"
+                   Margin="20" BorderColor="Pink" HasShadow="True">
+                <Image Source="logomorleycollege_white.png" 
+                       HeightRequest="20" WidthRequest="20"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" 
+                         >
+                <Grid HorizontalOptions="FillAndExpand" 
+                      VerticalOptions="FillAndExpand"
+                      >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Top Avaliable for you!"  
+                           VerticalOptions="CenterAndExpand" 
+                           HorizontalOptions="CenterAndExpand"
+                           FontSize="20"
+                           TextColor="White"
+                           FontAttributes="Bold"/>
+                    <Button Grid.Column="1" 
+                            VerticalOptions="FillAndExpand" 
+                            HorizontalOptions="EndAndExpand"
+                            Margin="10,0" FontSize="12"                            
+                            Text="View All" TextColor="WhiteSmoke"
+                            BackgroundColor="Transparent"/>                    
+                </Grid>
+            </StackLayout>            
+            <CarouselView  
+                      ItemsSource="{Binding Books}"                      
+                      HeightRequest="250"
+                      PeekAreaInsets="100"
+                      FlowDirection="LeftToRight"
+                      IsBounceEnabled="True"
+                      >
+                <CarouselView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal"
+                                       ItemSpacing="5"/>
+                </CarouselView.ItemsLayout>
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>                        
+                            <StackLayout Orientation="Horizontal" 
+                                         HorizontalOptions="CenterAndExpand"
+                                         Padding="15,5"                                         
+                                         >
+                            
+                            <Frame BackgroundColor="#3bc4e5"
+                                   HasShadow="True" CornerRadius="30"
+                                   BorderColor="Black"
+                                   Padding="1.5"
+                                   >
+                                <ImageButton Source="{Binding Image}"
+                                         CornerRadius="30"
+                                         BackgroundColor="#3bc4e5"
+                                         />
+                            </Frame>                                
+                            </StackLayout>                        
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </StackLayout>        
+    </ScrollView>
   
 </ContentPage>

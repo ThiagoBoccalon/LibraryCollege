@@ -8,5 +8,10 @@ namespace LibraryCollege.Views
         {
             InitializeComponent();
         }
+
+        private void CarouselView_Scrolled(object sender, ItemsViewScrolledEventArgs e)
+        {
+
+        }
     }
 }
