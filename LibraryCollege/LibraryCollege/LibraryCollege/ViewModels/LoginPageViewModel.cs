@@ -60,7 +60,9 @@ namespace LibraryCollege.ViewModels
         
         private void ExecuteLogin()
         {
-            
+            _navigationService.NavigateAsync(goToMainPage);
+            return;
+
             if (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password))
                 App.Current.MainPage.DisplayAlert("Empty values", "Plese enter Username and Password", "OK");
             

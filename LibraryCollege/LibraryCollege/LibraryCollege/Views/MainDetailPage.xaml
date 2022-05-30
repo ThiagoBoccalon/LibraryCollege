@@ -8,11 +8,11 @@
         <StackLayout Spacing="10" Padding="0,10" 
                      HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"                     
                      >
-            <Frame Padding="30" 
-                   VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+            
+            <Frame Padding="30" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
                    HeightRequest="50" WidthRequest="50" CornerRadius="100"
                    Margin="20" BorderColor="Pink" HasShadow="True">
-                <Image Source="logomorleycollege_white.png" 
+                <ImageButton Command="{Binding ExecuteNavigationToProfile}" Source="logomorleycollege_white.png" 
                        HeightRequest="20" WidthRequest="20"/>
             </Frame>
             <StackLayout Orientation="Horizontal" 
