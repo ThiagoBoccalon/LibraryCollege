@@ -21,12 +21,17 @@ namespace LibraryCollege.Services
             _booksAvaliableToYou = new List<BookModel>()
             {
                 new BookModel(){
-                        Image = "book_one.png",
+                        Image = "book_01.png",
                         NavigationToPage = "Profile"
                 },
 
                 new BookModel(){
-                        Image = "book_four.png",
+                        Image = "book_02.png",
+                        NavigationToPage = "Profile"
+                },
+
+                new BookModel(){
+                        Image = "book_03.png",
                         NavigationToPage = "Profile"
                 }
             };
@@ -37,12 +42,17 @@ namespace LibraryCollege.Services
             _booksBooksMoreRead = new List<BookModel>()
             {
                 new BookModel(){
-                        Image = "book_three.png",
+                        Image = "book_04.png",
                         NavigationToPage = "Profile"
                 },
 
                 new BookModel(){
-                        Image = "book_five.png",
+                        Image = "book_05.png",
+                        NavigationToPage = "Profile"
+                },
+
+                new BookModel(){
+                        Image = "book_06.png",
                         NavigationToPage = "Profile"
                 }
             };
@@ -53,12 +63,17 @@ namespace LibraryCollege.Services
             _booksBestRated = new List<BookModel>()
             {
                 new BookModel(){
-                        Image = "book_three.png",
+                        Image = "book_07.png",
                         NavigationToPage = "Profile"
                 },
 
                 new BookModel(){
-                        Image = "book_five.png",
+                        Image = "book_08.png",
+                        NavigationToPage = "Profile"
+                },
+
+                new BookModel(){
+                        Image = "book_09.png",
                         NavigationToPage = "Profile"
                 }
             };
@@ -69,12 +84,22 @@ namespace LibraryCollege.Services
             _booksRecommended = new List<BookModel>()
             {
                 new BookModel(){
-                        Image = "book_three.png",
+                        Image = "book_01.png",
                         NavigationToPage = "Profile"
                 },
 
                 new BookModel(){
-                        Image = "book_five.png",
+                        Image = "book_03.png",
+                        NavigationToPage = "Profile"
+                },
+
+                new BookModel(){
+                        Image = "book_05.png",
+                        NavigationToPage = "Profile"
+                },
+
+                new BookModel(){
+                        Image = "book_07.png",
                         NavigationToPage = "Profile"
                 }
             };
