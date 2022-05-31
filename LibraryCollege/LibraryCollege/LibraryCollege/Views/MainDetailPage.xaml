@@ -4,73 +4,168 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LibraryCollege.Views.MainDetailPage">
-    <ScrollView Padding="0">
-        <StackLayout Spacing="10" Padding="0,10" 
-                     HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"                     
-                     >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- (BEGIN) MAIN GRID -->
+            <Style x:Key="GridSectionBooks" TargetType="Grid">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand" />
+                <Setter Property="ColumnDefinitions">
+                    <Setter.Value>
+                        <ColumnDefinitionCollection>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*" />
+                        </ColumnDefinitionCollection>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="LabelSections" TargetType="Label">
+                <Setter Property="Grid.Column" Value="0"/>
+                
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+
+            <Style x:Key="ButtonSections" TargetType="Button">
+                <Setter Property="Grid.Column" Value="1" />
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+                <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="Text" Value="View All" />
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="BackgroundColor" Value="Transparent" />
+            </Style>
+            <!-- (BEGIN) MAIN GRID -->
+            <!-- (BEGIN) CAROUSEL BOOKS-->
+            <Style x:Key="CarouselBooks" TargetType="CarouselView">                
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="PeekAreaInsets" Value="100" />
+                <Setter Property="FlowDirection" Value="LeftToRight" />
+                <Setter Property="IsBounceEnabled" Value="True" />
+            </Style>
             
-            <Frame Padding="30" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
-                   HeightRequest="50" WidthRequest="50" CornerRadius="100"
-                   Margin="20" BorderColor="Pink" HasShadow="True">
-                <ImageButton Command="{Binding ExecuteNavigationToProfile}" Source="logomorleycollege_white.png" 
-                       HeightRequest="20" WidthRequest="20"/>
-            </Frame>
-            <StackLayout Orientation="Horizontal" 
+            <Style x:Key="StackLayoutBook" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Padding" Value="15,5" />
+            </Style>
+            
+            <Style x:Key="FrameBooks" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#3bc4e5" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="1.5" />
+            </Style>
+            <!-- (END) CAROUSEL BOOKS-->            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView Padding="0">
+            <StackLayout Spacing="10" Padding="0,10" 
+                         HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"                     
                          >
-                <Grid HorizontalOptions="FillAndExpand" 
-                      VerticalOptions="FillAndExpand"
-                      >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Column="0" Text="Top Avaliable for you!"  
-                           VerticalOptions="CenterAndExpand" 
-                           HorizontalOptions="CenterAndExpand"
-                           FontSize="20"
-                           TextColor="White"
-                           FontAttributes="Bold"/>
-                    <Button Grid.Column="1" 
-                            VerticalOptions="FillAndExpand" 
-                            HorizontalOptions="EndAndExpand"
-                            Margin="10,0" FontSize="12"                            
-                            Text="View All" TextColor="WhiteSmoke"
-                            BackgroundColor="Transparent"/>                    
-                </Grid>
-            </StackLayout>            
-            <CarouselView  
-                      ItemsSource="{Binding Books}"                      
-                      HeightRequest="250"
-                      PeekAreaInsets="100"
-                      FlowDirection="LeftToRight"
-                      IsBounceEnabled="True"
-                      >
-                <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Horizontal"
-                                       ItemSpacing="5"/>
-                </CarouselView.ItemsLayout>
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>                        
-                            <StackLayout Orientation="Horizontal" 
-                                         HorizontalOptions="CenterAndExpand"
-                                         Padding="15,5"                                         
-                                         >
-                            
-                            <Frame BackgroundColor="#3bc4e5"
-                                   HasShadow="True" CornerRadius="30"
-                                   BorderColor="Black"
-                                   Padding="1.5"
-                                   >
-                                <ImageButton Source="{Binding Image}"
-                                         CornerRadius="30"
-                                         BackgroundColor="#3bc4e5"
-                                         />
-                            </Frame>                                
-                            </StackLayout>                        
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
-        </StackLayout>        
-    </ScrollView>
-  
+                <Frame Padding="30" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
+                       HeightRequest="50" WidthRequest="50" CornerRadius="100"
+                       Margin="20" BorderColor="Pink" HasShadow="True">
+                    <ImageButton Command="{Binding ExecuteNavigationToProfile}" Source="logomorleycollege_white.png" 
+                           HeightRequest="20" WidthRequest="20"/>
+                </Frame>
+                
+                <!-- First Section-->
+                <StackLayout Orientation="Horizontal">
+                    <Grid Style="{StaticResource GridSectionBooks}">
+                        <Label Text="Top Avaliable for you!" Style="{StaticResource LabelSections}"/>
+                        <Button Style="{StaticResource ButtonSections}"/>
+                    </Grid>
+                </StackLayout>
+                <CarouselView ItemsSource="{Binding BooksAvaliablesToYou}" Style="{StaticResource CarouselBooks}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Style="{StaticResource StackLayoutBook}">
+                                <Frame Style="{StaticResource FrameBooks}">
+                                    <ImageButton Source="{Binding Image}" CornerRadius="30" BackgroundColor="#3bc4e5"/>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                
+                <!-- Second Section -->
+                <StackLayout Orientation="Horizontal">
+                    <Grid Style="{StaticResource GridSectionBooks}">
+                        <Label Text="Books More Read      " Style="{StaticResource LabelSections}"/>
+                        <Button Style="{StaticResource ButtonSections}"/>
+                    </Grid>
+                </StackLayout>
+                <CarouselView ItemsSource="{Binding BooksMoreRead}" Style="{StaticResource CarouselBooks}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Style="{StaticResource StackLayoutBook}">
+                                <Frame Style="{StaticResource FrameBooks}">
+                                    <ImageButton Source="{Binding Image}" CornerRadius="30" BackgroundColor="#3bc4e5"/>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                
+                <!-- Third Section -->
+                <StackLayout Orientation="Horizontal">
+                    <Grid Style="{StaticResource GridSectionBooks}">
+                        <Label Text="Books Best Rated      " Style="{StaticResource LabelSections}"/>
+                        <Button Style="{StaticResource ButtonSections}"/>
+                    </Grid>
+                </StackLayout>
+                <CarouselView ItemsSource="{Binding BooksBestRated}" Style="{StaticResource CarouselBooks}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Style="{StaticResource StackLayoutBook}">
+                                <Frame Style="{StaticResource FrameBooks}">
+                                    <ImageButton Source="{Binding Image}" CornerRadius="30" BackgroundColor="#3bc4e5"/>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+                
+                <!-- Fourth Section -->
+                <StackLayout Orientation="Horizontal">
+                    <Grid Style="{StaticResource GridSectionBooks}">
+                        <Label Text="Books Recommended" Style="{StaticResource LabelSections}"/>
+                        <Button Style="{StaticResource ButtonSections}"/>
+                    </Grid>
+                </StackLayout>
+                <CarouselView ItemsSource="{Binding BooksRecommended}" Style="{StaticResource CarouselBooks}">
+                    <CarouselView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                    </CarouselView.ItemsLayout>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Style="{StaticResource StackLayoutBook}">
+                                <Frame Style="{StaticResource FrameBooks}">
+                                    <ImageButton Source="{Binding Image}" CornerRadius="30" BackgroundColor="#3bc4e5"/>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

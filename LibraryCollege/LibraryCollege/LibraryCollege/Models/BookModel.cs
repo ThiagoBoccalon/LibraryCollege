@@ -5,7 +5,8 @@ using System.Text;
 namespace LibraryCollege.Models
 {
     public class BookModel
-    {
-        public string Image { get; set; }        
+    {   
+        public string Image { get; set; }
+        public string NavigationToPage { get; set; }
     }
 }

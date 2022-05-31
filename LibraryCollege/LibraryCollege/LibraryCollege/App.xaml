@@ -4,8 +4,9 @@
              xmlns:prism="http://prismlibrary.com"
              x:Class="LibraryCollege.App">
   <Application.Resources>
-
-    <!-- Application resource dictionary -->
-
-  </Application.Resources>
+        <ResourceDictionary>
+            <!--  -->
+            
+        </ResourceDictionary>
+    </Application.Resources>
 </prism:PrismApplication>
