@@ -1,5 +1,4 @@
 # Library of Morley College in London
-
 This is a project have developed to apply knowledge about Xamarin.Forms. 
 The application's goal is to help College's students find easily books that they like to read and It manages to loan and return the books.
 
