@@ -1,10 +1,13 @@
 ﻿using LibraryCollege.Interfaces;
 using LibraryCollege.Models;
 using LibraryCollege.Services;
+using MvvmHelpers.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,27 +16,30 @@ namespace LibraryCollege.ViewModels
     public class MainMasterPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
-        IMenuFakeService _menuFakeService;        
-        
+        IMenuFakeService _menuFakeService;
+
         public IReadOnlyCollection<MenuModel> Menus
         {            
-            get { return _menuFakeService.GetMenus(); }
+            get { return _menuFakeService.GetMenus(); }            
         }
-        
-        public ICommand ExecuteNavigationToProfile {  set; get; }
-        public ICommand ExecuteNavigationToHistory { set; get; }        
-        public ICommand ExecuteNavigationToLogOut { set; get; }
 
+        private MenuModel _selectedMenus { get; set; }
+        public MenuModel SelectedMenus
+        {
+            get { return _selectedMenus; }
+            set { _selectedMenus = value; HandleSelectedItemAsync(); }
+        }
+
+        private async Task HandleSelectedItemAsync()
+        {
+            await _navigationService.NavigateAsync("MainDetailPage/NavigationPage/" + SelectedMenus.NavigationTo);
+        }
+        public ICommand ExecuteNavigationToProfile { get; set; }
+        
         public MainMasterPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;            
-            ExecuteNavigationToProfile = new Command(() => ExecuteToProfile());
-            _menuFakeService = DependencyService.Get<IMenuFakeService>();
-        }
-
-        public void ExecuteToProfile()
-        {
-            _navigationService.NavigateAsync("ProfilePage");
+            _menuFakeService = DependencyService.Get<IMenuFakeService>();            
         }
     }
 }

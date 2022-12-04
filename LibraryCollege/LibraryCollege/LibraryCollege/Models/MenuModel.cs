@@ -8,5 +8,6 @@ namespace LibraryCollege.Models
     {
         public string Icon { get; set; }
         public string Title { get; set; }
+        public string NavigationTo { get; set; }
     }
 }

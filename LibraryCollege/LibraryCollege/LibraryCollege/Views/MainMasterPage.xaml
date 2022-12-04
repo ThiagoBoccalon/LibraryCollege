@@ -8,9 +8,10 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <ContentPage.Content>
-                <StackLayout Padding="0,40" Spacing="20">
-                    <Image Source="logomorleycollege_white.png" 
-                           VerticalOptions="Center" HorizontalOptions="Center"
+                <StackLayout Padding="0,40" Spacing="20">                    
+                    <Image Source="logomorleycollege_white.png"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
                            WidthRequest="120" HeightRequest="120"/>
                     <Line Background="white" Stroke="white" 
                           WidthRequest="200"
@@ -18,7 +19,11 @@
                     <BoxView HeightRequest="0.1" Color="White"/>
                     <ListView ItemsSource="{Binding Menus}"
                               SeparatorColor="White"
-                              RowHeight="70" Margin="0,-20">
+                              RowHeight="70" Margin="0,-20"
+                              HasUnevenRows="True"
+                              CachingStrategy="RecycleElement"
+                              SelectedItem="{Binding SelectedMenus, Mode=TwoWay}"
+                              >
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <ViewCell>
@@ -30,7 +35,7 @@
                                         <Label Text="{Binding Title}" 
                                                VerticalOptions="Center"
                                                FontSize="Body"/>                                        
-                                    </StackLayout>
+                                    </StackLayout>                                    
                                 </ViewCell>
                             </DataTemplate>
                         </ListView.ItemTemplate>
