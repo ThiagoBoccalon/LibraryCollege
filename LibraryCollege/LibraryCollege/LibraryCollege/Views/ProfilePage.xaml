@@ -2,12 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LibraryCollege.Views.ProfilePage">
-    
-    <ScrollView>
-        <StackLayout>
-            <Label Text="Welcome to profile page!!!"/>
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Row="0" Source="Katty" VerticalOptions="Start"/>
+
+        <StackLayout Grid.Row="0" BackgroundColor="White" VerticalOptions="End">
+            <Frame CornerRadius="40" Style="{StaticResource stlMainFrame}">
+                <!-- Block: 3 and 4 -->
+                <Grid Padding="25,10,25,0" RowSpacing="0" 
+                      ColumnDefinitions="*,*,*"
+                      RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                      >                    
+                    <!-- 4. Contact information-->
+                    <Label Grid.ColumnSpan="3" Text="Katty White" FontAttributes="Bold" FontSize="30"/>
+                    <Label Grid.Row="1" Text="London" TextColor="#a5a2a2" FontSize="16"/>
+                    <Label Grid.Row="2" Grid.ColumnSpan="3" Padding="0,10,0,0" FontSize="16">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Email: " FontAttributes="Bold" />
+                                <Span Text=" kattywhite@morley.ac.uk"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <!--4. Contact information: Board inforation-->
+                    <Label Grid.Row="3" Text="Course" Style="{StaticResource stlBoardTitle}" />
+                    <Label Grid.Row="4" Text="Photograph" Style="{StaticResource stlBoardDesc}"/>
+
+                    <Label Grid.Row="3" Grid.Column="1" Text="Level" Style="{StaticResource stlBoardTitle}"/>
+                    <Label Grid.Row="4" Grid.Column="1" Text="Level 2" Style="{StaticResource stlBoardDesc}"/>
+
+                    <Label Grid.Row="3" Grid.Column="2" Text="Campus" Style="{StaticResource stlBoardTitle}"/>
+                    <Label Grid.Row="4" Grid.Column="2" Text="Chelsea" Style="{StaticResource stlBoardDesc}"/>
+                    <!--4. Contact information: Follow button-->
+                    <Button Grid.Row="5" Grid.ColumnSpan="3" TextColor="White" BackgroundColor="#2193f3" Text="Edit Profile" Margin="0,20,0,2" FontAttributes="Bold" FontSize="17" HeightRequest="45"/>
+                </Grid>
+            </Frame>
         </StackLayout>
-    </ScrollView>  
+                     
+
+    </Grid>
 </ContentPage>
