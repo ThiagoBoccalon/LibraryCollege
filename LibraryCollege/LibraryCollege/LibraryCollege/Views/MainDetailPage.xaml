@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LibraryCollege.Views.MainDetailPage">
+             x:Class="LibraryCollege.Views.MainDetailPage"
+             BackgroundColor="{AppThemeBinding 
+             Dark={StaticResource blackColor},
+             Light={StaticResource whiteColor}}"
+             >
     <ContentPage.Resources>
         <ResourceDictionary>
             <!-- (BEGIN) MAIN GRID -->
@@ -22,11 +26,9 @@
 
             <Style x:Key="LabelSections" TargetType="Label">
                 <Setter Property="Grid.Column" Value="0"/>
-                
                 <Setter Property="VerticalOptions" Value="CenterAndExpand" />
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-                <Setter Property="FontSize" Value="20" />
-                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="20" />                
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
 
@@ -36,11 +38,19 @@
                 <Setter Property="HorizontalOptions" Value="EndAndExpand" />
                 <Setter Property="Margin" Value="10,0" />
                 <Setter Property="FontSize" Value="12" />
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BorderColor" Value="{AppThemeBinding 
+                    Dark={StaticResource whiteColor},
+                    Light={StaticResource blackColor}}"/>
                 <Setter Property="Text" Value="View All" />
-                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="TextColor" Value="{AppThemeBinding 
+                    Dark={StaticResource whiteColor},
+                    Light={StaticResource blackColor}}"/>
                 <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
             <!-- (BEGIN) MAIN GRID -->
+            
             <!-- (BEGIN) CAROUSEL BOOKS-->
             <Style x:Key="CarouselBooks" TargetType="CarouselView">                
                 <Setter Property="HeightRequest" Value="250" />
@@ -74,8 +84,9 @@
                 <Frame Padding="30" VerticalOptions="Center" HorizontalOptions="StartAndExpand"
                        HeightRequest="50" WidthRequest="50" CornerRadius="100"
                        Margin="20" BorderColor="Pink" HasShadow="True">
-                    <ImageButton Command="{Binding ExecuteNavigationToProfile}" Source="logomorleycollege_white.png" 
-                           HeightRequest="20" WidthRequest="20"/>
+                    <ImageButton Command="{Binding ExecuteNavigationToProfile}" 
+                                 Source="logomorleycollege_white.png" 
+                                 HeightRequest="20" WidthRequest="20"/>
                 </Frame>
                 
                 <!-- First Section-->

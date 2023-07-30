@@ -7,40 +7,71 @@
              Shell.FlyoutBehavior="Disabled"
              Shell.TabBarIsVisible="False"
              Shell.PresentationMode="ModalAnimated"
-             BackgroundColor="Black"
+             BackgroundColor="{AppThemeBinding 
+             Dark={StaticResource blackColor},
+             Light={StaticResource whiteColor}}"
              BackgroundImageSource="loginpagebackground.png"             
              Title="{Binding Title}">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stlLightButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Gray"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BorderWidth" Value="1"/>
+            </Style>
+            <Style x:Key="stlDarkButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="WhiteSmoke"/>
+                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="BorderWidth" Value="1"/>
+            </Style>
+            <Style x:Key="stlLightImage" TargetType="Image">
+                <Setter Property="Source" Value="logomorleycollege_white.png"/>                
+            </Style>
+            <Style x:Key="stlDarkImage" TargetType="Image">
+                <Setter Property="Source" Value="logomorleycollege_black.png"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
-        <StackLayout Margin="20" Padding="25,0" Spacing="5">            
+        <StackLayout Margin="20" Padding="25,0" Spacing="5">
             <Frame HasShadow="False" Padding="40"
                    Margin="0" VerticalOptions="Center" HorizontalOptions="Center"
                    BackgroundColor="Transparent">
-                <Image Source="logomorleycollege_white.png" VerticalOptions="Center" HorizontalOptions="Center"
+                <Image Style="{AppThemeBinding 
+                       Dark={StaticResource stlLightImage},
+                       Light={StaticResource stlDarkImage}}"
+                VerticalOptions="Center" HorizontalOptions="Center"
                        WidthRequest="200" HeightRequest="200"/>
             </Frame>
             <Entry Text="{Binding UserName}"                    
-                   BackgroundColor="Transparent"
-                   PlaceholderColor="White"                    
+                   BackgroundColor="Transparent"                           
                    Placeholder="Username"/>
-            
+
             <Entry Text="{Binding Password}"
                    BackgroundColor="Transparent"
-                   PlaceholderColor="White" 
                    Placeholder="Password"
                    IsPassword="True"/>
 
-            <Button Margin="0,60" VerticalOptions="Center" HorizontalOptions="Center"
-                    CornerRadius="100" BackgroundColor="GhostWhite"
+            <Button 
+                    Style="{AppThemeBinding 
+                    Dark={StaticResource stlDarkButton},
+                    Light={StaticResource stlLightButton}}"
+                    HorizontalOptions="Center"
+                    Margin="0,60" 
+                    VerticalOptions="Center" 
                     HeightRequest="60" WidthRequest="250"
-                    Text="Login" TextColor="Black" FontFamily="Arial"
-                    Command="{Binding ExecuteNavigationToLogin}" />         
-            
+                    CornerRadius="5"                    
+                    Text="Login" FontFamily="Arial"
+                    Command="{Binding ExecuteNavigationToLogin}" />
+
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="I forget my username or password"
-                              TextColor="White"
+                        <Span Text="I forget my username or password"                              
                               FontAttributes="Bold"
                               TextDecorations="Underline">
                             <Span.GestureRecognizers>
@@ -53,8 +84,7 @@
             <Label HorizontalOptions="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Register now"
-                              TextColor="White"
+                        <Span Text="Register now"                              
                               FontAttributes="Bold"
                               TextDecorations="Underline">
                             <Span.GestureRecognizers>
@@ -64,9 +94,6 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-
         </StackLayout>
     </ContentPage.Content>
-    
-
 </ContentPage>
