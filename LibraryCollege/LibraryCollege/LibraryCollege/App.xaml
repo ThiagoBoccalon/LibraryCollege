@@ -5,6 +5,17 @@
              x:Class="LibraryCollege.App">
     <Application.Resources>
         <ResourceDictionary>
+            <!-- Colours for labels -->
+            <Color x:Key="whiteColor">White</Color>
+            <Color x:Key="blackColor">Black</Color>
+
+            <Style x:Key="stlThemeLabels" TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding
+                        Dark={StaticResource whiteColor},
+                        Light={StaticResource blackColor}}"/>
+            </Style>
+
             <Style x:Key="stlContactBtn" TargetType="Button">
                 <Setter Property="TranslationY"     Value="-50"/>
                 <Setter Property="TranslationX"     Value="45"/>
@@ -32,7 +43,7 @@
                 <Setter Property="HeightRequest"   Value="{OnPlatform iOS='120', Android='228'}"/>
                 <Setter Property="HasShadow"       Value="False" />
             </Style>
-
+            
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>

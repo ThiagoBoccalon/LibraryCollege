@@ -22,9 +22,9 @@
                       RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
                       >                    
                     <!-- 4. Contact information-->
-                    <Label Grid.ColumnSpan="3" Text="Katty White" FontAttributes="Bold" FontSize="30"/>
+                    <Label Grid.ColumnSpan="3" Text="Katty White" TextColor="Gray" FontAttributes="Bold" FontSize="30"/>
                     <Label Grid.Row="1" Text="London" TextColor="#a5a2a2" FontSize="16"/>
-                    <Label Grid.Row="2" Grid.ColumnSpan="3" Padding="0,10,0,0" FontSize="16">
+                    <Label Grid.Row="2" Grid.ColumnSpan="3" TextColor="Gray" Padding="0,10,0,0" FontSize="16">
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span Text="Email: " FontAttributes="Bold" />
@@ -34,13 +34,13 @@
                     </Label>
                     <!--4. Contact information: Board inforation-->
                     <Label Grid.Row="3" Text="Course" Style="{StaticResource stlBoardTitle}" />
-                    <Label Grid.Row="4" Text="Photograph" Style="{StaticResource stlBoardDesc}"/>
+                    <Label Grid.Row="4" Text="Photograph" TextColor="Gray" Style="{StaticResource stlBoardDesc}"/>
 
                     <Label Grid.Row="3" Grid.Column="1" Text="Level" Style="{StaticResource stlBoardTitle}"/>
-                    <Label Grid.Row="4" Grid.Column="1" Text="Level 2" Style="{StaticResource stlBoardDesc}"/>
+                    <Label Grid.Row="4" Grid.Column="1" Text="Level 2" TextColor="Gray" Style="{StaticResource stlBoardDesc}"/>
 
-                    <Label Grid.Row="3" Grid.Column="2" Text="Campus" Style="{StaticResource stlBoardTitle}"/>
-                    <Label Grid.Row="4" Grid.Column="2" Text="Chelsea" Style="{StaticResource stlBoardDesc}"/>
+                    <Label Grid.Row="3" Grid.Column="2" Text="Campus"  Style="{StaticResource stlBoardTitle}"/>
+                    <Label Grid.Row="4" Grid.Column="2" Text="Chelsea" TextColor="Gray" Style="{StaticResource stlBoardDesc}"/>
                     <!--4. Contact information: Follow button-->
                     <Button Grid.Row="5" Grid.ColumnSpan="3" TextColor="White" BackgroundColor="#2193f3" Text="Edit Profile" Margin="0,20,0,2" FontAttributes="Bold" FontSize="17" HeightRequest="45"/>
                 </Grid>
