@@ -32,7 +32,7 @@ namespace LibraryCollege.ViewModels
 
         private async Task HandleSelectedItemAsync()
         {
-            await _navigationService.NavigateAsync("MainDetailPage/NavigationPage/" + SelectedMenus.NavigationTo);
+            await _navigationService.NavigateAsync("NavigationPage/" + SelectedMenus.NavigationTo);
         }
         public ICommand ExecuteNavigationToProfile { get; set; }
         
