@@ -4,12 +4,14 @@
                   xmlns:prism="http://prismlibrary.com"
                   prism:ViewModelLocator.AutowireViewModel="True"                  
                   x:Class="LibraryCollege.Views.MainMasterPage">
-
+    
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <ContentPage.Content>
                 <StackLayout Padding="0,40" Spacing="20">                    
-                    <Image Source="logomorleycollege_white.png"
+                    <Image Source="{AppThemeBinding 
+                        Dark={StaticResource logoWhite},
+                        Light={StaticResource logoBlack}}"
                            VerticalOptions="FillAndExpand"
                            HorizontalOptions="FillAndExpand"
                            WidthRequest="120" HeightRequest="120"/>

@@ -8,7 +8,11 @@
             <!-- Colours for labels -->
             <Color x:Key="whiteColor">White</Color>
             <Color x:Key="blackColor">Black</Color>
-
+            
+            <!-- Logos -->
+            <x:String x:Key="logoWhite">logomorleycollege_white.png</x:String>
+            <x:String x:Key="logoBlack">logomorleycollege_black.png</x:String>
+            
             <Style x:Key="stlThemeLabels" TargetType="Label">
                 <Setter Property="TextColor"
                         Value="{AppThemeBinding
