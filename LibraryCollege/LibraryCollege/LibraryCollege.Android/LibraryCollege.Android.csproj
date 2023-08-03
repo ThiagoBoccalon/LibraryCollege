@@ -185,10 +185,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icons_female_profile_100.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\icons_library_50.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icons_home_50.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable-hdpi\icons_library_100.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icons_home_100.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\icons_logout_50.png" />

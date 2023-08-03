@@ -17,9 +17,8 @@ namespace LibraryCollege.Services
         {
             _menus = new List<MenuModel>()
             {
-                new MenuModel(){Icon= "icons_logout_100.png", Title = "HOME", NavigationTo= ""},
+                new MenuModel(){Icon= "icons_home_100.png", Title = "HOME", NavigationTo= ""},
                 new MenuModel(){ Icon = "icons_female_profile_100.png", Title = "PROFILE", NavigationTo = "ProfilePage" },
-                //new MenuModel(){Icon = "", Title = "BOOKS WITH ME", NavigationTo = ""},
                 new MenuModel() { Icon = "icons_books_100.png", Title = "HISTORY", NavigationTo = "" },
                 new MenuModel() { Icon = "icons_logout_100.png", Title = "LOG OUT", NavigationTo = "" }
             };
