@@ -18,8 +18,7 @@ namespace LibraryCollege
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("LoginPage");
+            MainPage = new AppShell();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -27,11 +26,10 @@ namespace LibraryCollege
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-            containerRegistry.RegisterForNavigation<MainMasterPage, MainMasterPageViewModel>();
-            containerRegistry.RegisterForNavigation<MainDetailPage, MainDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();            
+            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
-            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();            
         }
     }
 }

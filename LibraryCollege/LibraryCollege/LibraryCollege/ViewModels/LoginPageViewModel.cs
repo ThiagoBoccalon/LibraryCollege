@@ -18,12 +18,10 @@ namespace LibraryCollege.ViewModels
         private readonly string usernameToValidation = "Thiago";
         private readonly string passwordToValidation = "123";
 
-        private readonly string goToMainPage = "MainMasterPage/NavigationPage/MainDetailPage";
+        private readonly string goToMainPage = "AppShell";
         private readonly string goToRegisterPage = "RegisterPage";
 
-
         public event PropertyChangedEventHandler PropertyChanged;
-
         private readonly INavigationService _navigationService;
 
         private string _username;

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LibraryCollege.Views.MainDetailPage"
+             x:Class="LibraryCollege.Views.MainPage"
              BackgroundColor="{AppThemeBinding 
              Dark={StaticResource blackColor},
              Light={StaticResource whiteColor}}"

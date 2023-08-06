@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryCollege.Views.HeaderContentView"
+             HeightRequest="240"             
+             >
+  <ContentView.Content>
+        <StackLayout Padding="0,40">
+            <Image Source="{AppThemeBinding 
+                        Dark={StaticResource logoWhite},
+                        Light={StaticResource logoBlack}}"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           WidthRequest="120" HeightRequest="120"/>
+            <Line Background="white" Stroke="white" 
+                          WidthRequest="200"
+                          HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

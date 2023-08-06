@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace LibraryCollege.ViewModels
 {
-    public class MainDetailPageViewModel : BindableBase
+    public class MainPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
         ISectionBookFakeService _bookFakeService;
@@ -37,7 +37,7 @@ namespace LibraryCollege.ViewModels
         }
 
         public ICommand ExecuteNavigationToProfile { get; set; }
-        public MainDetailPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             _bookFakeService = DependencyService.Get<ISectionBookFakeService>();
