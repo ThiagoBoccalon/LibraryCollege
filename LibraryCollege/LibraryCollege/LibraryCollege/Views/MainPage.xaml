@@ -52,13 +52,19 @@
             <!-- (BEGIN) MAIN GRID -->
             
             <!-- (BEGIN) CAROUSEL BOOKS-->
-            <Style x:Key="CarouselBooks" TargetType="CarouselView">                
+            
+            <!--<Style x:Key="CarouselBooks" TargetType="CarouselView">                
                 <Setter Property="HeightRequest" Value="250" />
                 <Setter Property="PeekAreaInsets" Value="100" />
                 <Setter Property="FlowDirection" Value="LeftToRight" />
                 <Setter Property="IsBounceEnabled" Value="True" />
-            </Style>
+            </Style>-->
             
+            <Style x:Key="CollectionBooks" TargetType="CollectionView">
+                <Setter Property="HeightRequest" Value="250" />                
+                <Setter Property="FlowDirection" Value="LeftToRight" />                
+            </Style>
+
             <Style x:Key="StackLayoutBook" TargetType="StackLayout">
                 <Setter Property="Orientation" Value="Horizontal"/>
                 <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
@@ -87,7 +93,7 @@
                     <ImageButton Command="{Binding ExecuteNavigationToProfile}" 
                                  Source="logomorleycollege_white.png" 
                                  HeightRequest="20" WidthRequest="20"/>
-                </Frame>
+                </Frame>                
                 
                 <!-- First Section-->
                 <StackLayout Orientation="Horizontal">
@@ -96,11 +102,12 @@
                         <Button Style="{StaticResource ButtonSections}"/>
                     </Grid>
                 </StackLayout>
-                <CarouselView ItemsSource="{Binding BooksAvaliablesToYou}" Style="{StaticResource CarouselBooks}">
-                    <CarouselView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
+
+                <CollectionView ItemsSource="{Binding BooksAvaliablesToYou}" Style="{StaticResource CollectionBooks}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>                        
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Style="{StaticResource StackLayoutBook}">
                                 <Frame Style="{StaticResource FrameBooks}">
@@ -108,8 +115,8 @@
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 
                 <!-- Second Section -->
                 <StackLayout Orientation="Horizontal">
@@ -118,11 +125,11 @@
                         <Button Style="{StaticResource ButtonSections}"/>
                     </Grid>
                 </StackLayout>
-                <CarouselView ItemsSource="{Binding BooksMoreRead}" Style="{StaticResource CarouselBooks}">
-                    <CarouselView.ItemsLayout>
+                <CollectionView ItemsSource="{Binding BooksMoreRead}" Style="{StaticResource CollectionBooks}">
+                    <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Style="{StaticResource StackLayoutBook}">
                                 <Frame Style="{StaticResource FrameBooks}">
@@ -130,8 +137,8 @@
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 
                 <!-- Third Section -->
                 <StackLayout Orientation="Horizontal">
@@ -140,11 +147,11 @@
                         <Button Style="{StaticResource ButtonSections}"/>
                     </Grid>
                 </StackLayout>
-                <CarouselView ItemsSource="{Binding BooksBestRated}" Style="{StaticResource CarouselBooks}">
-                    <CarouselView.ItemsLayout>
+                <CollectionView ItemsSource="{Binding BooksBestRated}" Style="{StaticResource CollectionBooks}">
+                    <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Style="{StaticResource StackLayoutBook}">
                                 <Frame Style="{StaticResource FrameBooks}">
@@ -152,8 +159,8 @@
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 
                 <!-- Fourth Section -->
                 <StackLayout Orientation="Horizontal">
@@ -162,11 +169,11 @@
                         <Button Style="{StaticResource ButtonSections}"/>
                     </Grid>
                 </StackLayout>
-                <CarouselView ItemsSource="{Binding BooksRecommended}" Style="{StaticResource CarouselBooks}">
-                    <CarouselView.ItemsLayout>
+                <CollectionView ItemsSource="{Binding BooksRecommended}" Style="{StaticResource CollectionBooks}">
+                    <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
-                    </CarouselView.ItemsLayout>
-                    <CarouselView.ItemTemplate>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout Style="{StaticResource StackLayoutBook}">
                                 <Frame Style="{StaticResource FrameBooks}">
@@ -174,8 +181,8 @@
                                 </Frame>
                             </StackLayout>
                         </DataTemplate>
-                    </CarouselView.ItemTemplate>
-                </CarouselView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

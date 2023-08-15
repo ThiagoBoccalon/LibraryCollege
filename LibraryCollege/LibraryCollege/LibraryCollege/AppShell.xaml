@@ -2,10 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:LibraryCollege.Views"
-             x:Class="LibraryCollege.AppShell">
-    <!-- -->
-   
-    
+             x:Class="LibraryCollege.AppShell">    
     <Shell.FlyoutHeader>
         <local:HeaderContentView/>
     </Shell.FlyoutHeader>
@@ -15,12 +12,10 @@
                 FlyoutDisplayOptions="AsMultipleItems"
                 >
         <FlyoutItem.Icon>
-            <FontImageSource FontFamily="FAS"
-                             Color="{AppThemeBinding 
+            <FontImageSource Color="{AppThemeBinding 
                                     Dark=White, 
-                                    Light=Black}"
-                             Glyph=""/>
-        </FlyoutItem.Icon>
+                                    Light=Black}"/>
+        </FlyoutItem.Icon>        
         <ShellContent Title="Home" Icon="icons_home_100.png" IsTabStop="True" ContentTemplate="{DataTemplate local:MainPage}"/>
         <ShellContent Title="Profile" Icon="icons_female_profile_100.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProfilePage}"/>
         <ShellContent Title="History" Icon="icons_books_100.png" IsTabStop="True" ContentTemplate="{DataTemplate local:ProfilePage}"/>
