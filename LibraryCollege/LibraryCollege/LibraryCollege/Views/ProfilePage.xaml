@@ -5,7 +5,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LibraryCollege.Views.ProfilePage">
+             x:Class="LibraryCollege.Views.ProfilePage"
+             Shell.BackgroundColor="#F5E2A1"
+             Shell.ForegroundColor="Black">
 
     <Grid BackgroundColor="White">
         <Grid.RowDefinitions>

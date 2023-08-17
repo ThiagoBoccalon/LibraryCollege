@@ -4,9 +4,19 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LibraryCollege.Views.MainPage"
+             
+             Shell.BackgroundColor="{AppThemeBinding 
+             Dark={StaticResource blackColor},
+             Light={StaticResource whiteColor}}"
+             
+             Shell.ForegroundColor="{AppThemeBinding 
+             Dark={StaticResource whiteColor},
+             Light={StaticResource blackColor}}"
+             
              BackgroundColor="{AppThemeBinding 
              Dark={StaticResource blackColor},
              Light={StaticResource whiteColor}}"
+             
              >
     <ContentPage.Resources>
         <ResourceDictionary>
