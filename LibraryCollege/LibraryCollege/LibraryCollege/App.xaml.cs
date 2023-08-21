@@ -19,6 +19,7 @@ namespace LibraryCollege
         {
             InitializeComponent();
             MainPage = new AppShell();
+            //MainPage = new SectionBooksSelectedPage();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -30,7 +31,8 @@ namespace LibraryCollege
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
             containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();                   
-            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();                   
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<SectionBooksSelectedPage, SectionBooksSelectedPageViewModel>();
         }
     }
 }

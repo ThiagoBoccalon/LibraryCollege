@@ -7,7 +7,7 @@ namespace LibraryCollege.Interfaces
 {
     public interface ISectionBookFakeService
     {
-        List<BookModel> GetBooksAvaliableToYou();        
+        List<BookModel> GetBooksAvaliable();        
         List<BookModel> GetBooksMoreRead();
         List<BookModel> GetBooksBestRated();
         List<BookModel> GetBooksRecommended();

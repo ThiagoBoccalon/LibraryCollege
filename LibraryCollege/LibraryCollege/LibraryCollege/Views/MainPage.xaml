@@ -108,8 +108,9 @@
                 <!-- First Section-->
                 <StackLayout Orientation="Horizontal">
                     <Grid Style="{StaticResource GridSectionBooks}">
-                        <Label Text="Top Avaliable for you!" Style="{StaticResource LabelSections}"/>
-                        <Button Style="{StaticResource ButtonSections}"/>
+                        <Label Text="Top Available for you!" Style="{StaticResource LabelSections}"/>
+                        <Button Style="{StaticResource ButtonSections}" Command="{Binding ExecuteNavigationToSectionBooks}"
+                                CommandParameter="AVAILABLE"/>
                     </Grid>
                 </StackLayout>
 
@@ -132,7 +133,8 @@
                 <StackLayout Orientation="Horizontal">
                     <Grid Style="{StaticResource GridSectionBooks}">
                         <Label Text="Books More Read      " Style="{StaticResource LabelSections}"/>
-                        <Button Style="{StaticResource ButtonSections}"/>
+                        <Button Style="{StaticResource ButtonSections}" Command="{Binding ExecuteNavigationToSectionBooks}"
+                                CommandParameter="MORE_READ"/>
                     </Grid>
                 </StackLayout>
                 <CollectionView ItemsSource="{Binding BooksMoreRead}" Style="{StaticResource CollectionBooks}">
@@ -154,7 +156,8 @@
                 <StackLayout Orientation="Horizontal">
                     <Grid Style="{StaticResource GridSectionBooks}">
                         <Label Text="Books Best Rated      " Style="{StaticResource LabelSections}"/>
-                        <Button Style="{StaticResource ButtonSections}"/>
+                        <Button Style="{StaticResource ButtonSections}" Command="{Binding ExecuteNavigationToSectionBooks}"
+                                CommandParameter="BEST_RATED"/>
                     </Grid>
                 </StackLayout>
                 <CollectionView ItemsSource="{Binding BooksBestRated}" Style="{StaticResource CollectionBooks}">
@@ -176,7 +179,8 @@
                 <StackLayout Orientation="Horizontal">
                     <Grid Style="{StaticResource GridSectionBooks}">
                         <Label Text="Books Recommended" Style="{StaticResource LabelSections}"/>
-                        <Button Style="{StaticResource ButtonSections}"/>
+                        <Button Style="{StaticResource ButtonSections}" Command="{Binding ExecuteNavigationToSectionBooks}"
+                                CommandParameter="RECOMMENDED"/>
                     </Grid>
                 </StackLayout>
                 <CollectionView ItemsSource="{Binding BooksRecommended}" Style="{StaticResource CollectionBooks}">
