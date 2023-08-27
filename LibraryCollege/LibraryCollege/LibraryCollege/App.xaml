@@ -8,6 +8,7 @@
             <!-- Colours for labels -->
             <Color x:Key="whiteColor">White</Color>
             <Color x:Key="blackColor">Black</Color>
+            <Color x:Key="grayColor">#474747</Color>
             
             <!-- Logos -->
             <x:String x:Key="logoWhite">logomorleycollege_white.png</x:String>
@@ -19,6 +20,29 @@
                         Dark={StaticResource whiteColor},
                         Light={StaticResource blackColor}}"/>
             </Style>
+            
+            <!-- Books Styles (Begin) -->
+
+            <Style x:Key="CollectionBooks" TargetType="CollectionView">
+                <Setter Property="HeightRequest" Value="250" />
+                <Setter Property="FlowDirection" Value="LeftToRight" />
+            </Style>
+
+            <Style x:Key="StackLayoutBook" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="Padding" Value="15,5" />
+            </Style>
+
+            <Style x:Key="FrameBooks" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Pink" />
+                <Setter Property="HasShadow" Value="True" />
+                <Setter Property="CornerRadius" Value="30" />
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="1.5" />
+            </Style>
+
+            <!-- Books Styles (End) -->
 
             <Style x:Key="stlContactBtn" TargetType="Button">
                 <Setter Property="TranslationY"     Value="-50"/>

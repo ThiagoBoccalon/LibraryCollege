@@ -25,84 +25,94 @@ namespace LibraryCollege.Services
             {
                 new BookModel(){
                         Image = "book_01.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Lion the Witch and the wardrobe",
+                        Author = "C.S Lewis",
                         BookFlag = BookFlag.AVAILABLE
                 },
 
                 new BookModel(){
                         Image = "book_02.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Voyage of the Dawn Treader",
+                        Author = "C.S Lewis",
                         BookFlag = BookFlag.AVAILABLE
                 },
 
                 new BookModel(){
                         Image = "book_03.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Lord of the rings Part 1",
+                        Author = "J.R,R Tolkien",
                         BookFlag = BookFlag.AVAILABLE
                 },
 
                 new BookModel(){
                         Image = "book_04.png",
-                        NavigationToPage = "Profile",
+                        Title = "I Belong Here",
+                        Author = "",
                         BookFlag = BookFlag.MORE_READ
                 },
 
                 new BookModel(){
                         Image = "book_05.png",
-                        NavigationToPage = "Profile",
+                        Title = "A Woman of War",
+                        Author = "Mandy Robotham",
                         BookFlag = BookFlag.MORE_READ
                 },
 
                 new BookModel(){
                         Image = "book_06.png",
-                        NavigationToPage = "Profile",
+                        Title = "Coffee Self-Talk",
+                        Author = "Kristen Helmstetter",
                         BookFlag = BookFlag.MORE_READ
                 },
 
                 new BookModel(){
                         Image = "book_07.png",
-                        NavigationToPage = "Profile",
+                        Title = "Midnight at the Blackbird Cafe",
+                        Author = "Heather Webber",
                         BookFlag = BookFlag.BEST_RATED
                 },
 
                 new BookModel(){
                         Image = "book_08.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Shack",
+                        Author = "William P. Young",
                         BookFlag = BookFlag.BEST_RATED
                 },
 
                 new BookModel(){
                         Image = "book_09.png",
-                        NavigationToPage = "Profile",
+                        Title = "Mrs England",
+                        Author = "Stacey Halls",
                         BookFlag = BookFlag.BEST_RATED
                 },
 
                 new BookModel(){
                         Image = "book_01.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Lion the Witch and the wardrobe",
+                        Author = "C.S Lewis",
                         BookFlag = BookFlag.RECOMMENDED
                 },
 
                 new BookModel(){
                         Image = "book_03.png",
-                        NavigationToPage = "Profile",
+                        Title = "The Lord of the rings Part 1",
+                        Author = "J.R,R Tolkien",
                         BookFlag = BookFlag.RECOMMENDED
                 },
 
                 new BookModel(){
                         Image = "book_05.png",
-                        NavigationToPage = "Profile",
+                        Title = "A Woman of War",
+                        Author = "Mandy Robotham",
                         BookFlag = BookFlag.RECOMMENDED
                 },
 
                 new BookModel(){
                         Image = "book_07.png",
-                        NavigationToPage = "Profile",
+                        Title = "Midnight at the Blackbird Cafe",
+                        Author = "Heather Webber",
                         BookFlag= BookFlag.RECOMMENDED
                 },
-
-
-
             };
         }
 

@@ -6,7 +6,11 @@
              x:Class="LibraryCollege.Views.SectionBooksSelectedPage">
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="5,30">
+            <Label Text="{Binding Section}" HorizontalOptions="Center" 
+                   VerticalOptions="Center" 
+                   HorizontalTextAlignment="Center"
+                   FontSize="18" TextColor="White"/>
             <CollectionView ItemsSource="{Binding Books}">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout  Orientation="Vertical" Span="2"/>
@@ -17,14 +21,20 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height=".85*" />
                                 <RowDefinition Height=".15*" />
-                            </Grid.RowDefinitions>                            
-                            <Image 
-                                   Source="{Binding Image}"
-                                   Aspect="AspectFill"
-                                   HeightRequest="60"
-                                   WidthRequest="60" />
-                            <Label Grid.Row="1"
-                                   Text="Book`s Name"
+                            </Grid.RowDefinitions>
+                            <Frame Style="{StaticResource FrameBooks}">
+                                <ImageButton Source="{Binding Image}"
+                                             Aspect="AspectFill"
+                                             CornerRadius="30" 
+                                             BackgroundColor="#3bc4e5"
+                                             HeightRequest="60"
+                                             WidthRequest="60" />     
+                            </Frame>                            
+                            <Label Grid.Row="1" HorizontalOptions="CenterAndExpand"                                   
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"
+                                   Text="{Binding Title}"
+                                   FontSize="14"
                                    FontAttributes="Bold" />
                         </Grid>
                     </DataTemplate>

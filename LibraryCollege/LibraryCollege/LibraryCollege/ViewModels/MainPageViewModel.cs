@@ -22,6 +22,7 @@ namespace LibraryCollege.ViewModels
 
         private readonly INavigationService _navigationService;
         ISectionBookFakeService _bookFakeService;
+        private string sectionIs;
 
         IReadOnlyCollection<BookModel> _books;
 
@@ -86,26 +87,31 @@ namespace LibraryCollege.ViewModels
             {
                 case AVAILABLE:
                     {
+                        sectionIs = "Books Available for you!";
                         booksThisSection = BooksAvaliablesToYou;
                         break;
                     }
                 case MOREREAD:
                     {
+                        sectionIs = "Books reader";
                         booksThisSection = BooksMoreRead;
                         break;
                     }
                 case BESTRATED:
                     {
+                        sectionIs = "Books the best rated";
                         booksThisSection = BooksBestRated;
                         break;
                     }
                 case RECOMMENDED:
                     {
+                        sectionIs = "Books more recommended";
                         booksThisSection = BooksRecommended;
                         break;
                     }
             }
-            
+
+            booksParameter.Add("Section", sectionIs);
             booksParameter.Add("BookSection", booksThisSection);
             await _navigationService.NavigateAsync("SectionBooksSelectedPage", booksParameter);
         }

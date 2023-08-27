@@ -15,7 +15,13 @@ namespace LibraryCollege.ViewModels
 	{
         private readonly INavigationService _navigationService;
         private IReadOnlyCollection<BookModel> _books;
-        private string _title;
+        private string _section;
+
+        public string Section
+        {
+            get { return _section; }
+            private set { SetProperty(ref _section, value); }
+        }
         public IReadOnlyCollection<BookModel> Books
         {
             get { return _books; }
@@ -34,6 +40,7 @@ namespace LibraryCollege.ViewModels
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
+            Section = parameters.GetValue<string>("Section");
             var examplePar = parameters.GetValues<IReadOnlyCollection<BookModel>>("BookSection");
             foreach (var book in examplePar)
             {

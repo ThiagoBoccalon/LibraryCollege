@@ -6,7 +6,7 @@
              x:Class="LibraryCollege.Views.MainPage"
              
              Shell.BackgroundColor="{AppThemeBinding 
-             Dark={StaticResource blackColor},
+             Dark={StaticResource grayColor},
              Light={StaticResource whiteColor}}"
              
              Shell.ForegroundColor="{AppThemeBinding 
@@ -14,13 +14,10 @@
              Light={StaticResource blackColor}}"
              
              BackgroundColor="{AppThemeBinding 
-             Dark={StaticResource blackColor},
-             Light={StaticResource whiteColor}}"
-             
-             >
+             Dark={StaticResource grayColor},
+             Light={StaticResource whiteColor}}">
     <ContentPage.Resources>
-        <ResourceDictionary>
-            <!-- (BEGIN) MAIN GRID -->
+        <ResourceDictionary>            
             <Style x:Key="GridSectionBooks" TargetType="Grid">
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="VerticalOptions" Value="FillAndExpand" />
@@ -59,36 +56,7 @@
                     Light={StaticResource blackColor}}"/>
                 <Setter Property="BackgroundColor" Value="Transparent" />
             </Style>
-            <!-- (BEGIN) MAIN GRID -->
             
-            <!-- (BEGIN) CAROUSEL BOOKS-->
-            
-            <!--<Style x:Key="CarouselBooks" TargetType="CarouselView">                
-                <Setter Property="HeightRequest" Value="250" />
-                <Setter Property="PeekAreaInsets" Value="100" />
-                <Setter Property="FlowDirection" Value="LeftToRight" />
-                <Setter Property="IsBounceEnabled" Value="True" />
-            </Style>-->
-            
-            <Style x:Key="CollectionBooks" TargetType="CollectionView">
-                <Setter Property="HeightRequest" Value="250" />                
-                <Setter Property="FlowDirection" Value="LeftToRight" />                
-            </Style>
-
-            <Style x:Key="StackLayoutBook" TargetType="StackLayout">
-                <Setter Property="Orientation" Value="Horizontal"/>
-                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
-                <Setter Property="Padding" Value="15,5" />
-            </Style>
-            
-            <Style x:Key="FrameBooks" TargetType="Frame">
-                <Setter Property="BackgroundColor" Value="Pink" />
-                <Setter Property="HasShadow" Value="True" />
-                <Setter Property="CornerRadius" Value="30" />
-                <Setter Property="BorderColor" Value="Black" />
-                <Setter Property="Padding" Value="1.5" />
-            </Style>
-            <!-- (END) CAROUSEL BOOKS-->            
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -132,7 +100,7 @@
                 <!-- Second Section -->
                 <StackLayout Orientation="Horizontal">
                     <Grid Style="{StaticResource GridSectionBooks}">
-                        <Label Text="Books More Read      " Style="{StaticResource LabelSections}"/>
+                        <Label Text="Books Reader      " Style="{StaticResource LabelSections}"/>
                         <Button Style="{StaticResource ButtonSections}" Command="{Binding ExecuteNavigationToSectionBooks}"
                                 CommandParameter="MORE_READ"/>
                     </Grid>
